@@ -22,6 +22,14 @@ return require('packer').startup(function(use)
   })
 
   use({
+      'sainnhe/gruvbox-material',
+      as = 'gruvbox-material',
+      config = function()
+          vim.cmd('colorscheme gruvbox-material')
+      end
+    })
+
+  use({
       "folke/trouble.nvim",
       config = function()
           require("trouble").setup {

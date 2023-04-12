@@ -81,10 +81,8 @@ vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>Q', ':qa<CR>')
 -- Remap to open a new horizontal split with tree explorer using vim.cmd.ex
 vim.keymap.set('n', '<leader>E', ':30vsp<CR>:Ex<CR>')
--- Remap to open new vertical split with Terminal
 vim.keymap.set('n', '<leader>t', ':30sp<CR>:terminal<CR>i')
--- Remap exit terminal insert mode to normal mode and close it
+vim.keymap.set('n', '<leader>T', ':terminal<CR>i')
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 vim.keymap.set('t', '<leader>q', '<C-\\><C-n>:q<CR>')
--- Remap hide the terminal buffer without closing it
 vim.keymap.set('t', '<leader>H', '<C-\\><C-n>:hide<CR>:q<CR>')
