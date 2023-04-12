@@ -77,6 +77,10 @@ return require('packer').startup(function(use)
       end,
   }
   use("tpope/vim-commentary")
+  use("turbio/bracey.vim")
+  use("akinsho/toggleterm.nvim")
+  use('brenoprata10/nvim-highlight-colors')
+  use('matbme/JABS.nvim')
 
 end)
 

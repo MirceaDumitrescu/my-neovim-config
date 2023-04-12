@@ -15,6 +15,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
+-- Paste from clipboard
+vim.keymap.set("n", "<leader>p", [["+p]])
+
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
@@ -50,22 +53,8 @@ vim.keymap.set("n", "<leader>2", "<cmd>tablast<CR>")
 
 
 -- navigate between buffers
-vim.keymap.set("n", "<leader>1", "<cmd>buffer 1<CR>")
-vim.keymap.set("n", "<leader>2", "<cmd>buffer 2<CR>")
-vim.keymap.set("n", "<leader>3", "<cmd>buffer 3<CR>")
-
--- prettier
-vim.keymap.set("n", "<leader>p", "<cmd>Prettier<CR>")
--- prettier when save file at the same time
+vim.keymap.set("n", "<leader><leader>", ":JABSOpen<CR>")
 vim.keymap.set("n", "<leader>w", "<cmd>Prettier<CR>:w<CR>")
-
-
--- Comment out highlighted text or current line
-vim.keymap.set("n", "<leader>/", "<cmd>CommentToggle<CR>")
-vim.keymap.set("v", "<leader>/", "<cmd>CommentToggle<CR>")
-vim.keymap.set("n", "<leader>c", "<cmd>CommentToggle<CR>")
-vim.keymap.set("v", "<leader>c", "<cmd>CommentToggle<CR>")
-
 
 -- Terminal mapping
 vim.keymap.set('n', '<leader>t', '<cmd>exe v:count1 . "ToggleTerm"<CR>', {silent = true})
@@ -79,3 +68,23 @@ vim.keymap.set('n', 'L', '$')
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
+-- Split Pane Navigation
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+-- Split remaps to open new split in the same directory
+vim.keymap.set('n', '<leader>h', ':vsp<CR>:cd %:p:h<CR>:pwd<CR>')
+vim.keymap.set('n', '<leader>v', ':sp<CR>:cd %:p:h<CR>:pwd<CR>')
+vim.keymap.set('n', '<leader>q', ':q<CR>')
+vim.keymap.set('n', '<leader>Q', ':qa<CR>')
+-- Remap to open a new horizontal split with tree explorer using vim.cmd.ex
+vim.keymap.set('n', '<leader>E', ':30vsp<CR>:Ex<CR>')
+-- Remap to open new vertical split with Terminal
+vim.keymap.set('n', '<leader>t', ':30sp<CR>:terminal<CR>i')
+-- Remap exit terminal insert mode to normal mode and close it
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+vim.keymap.set('t', '<leader>q', '<C-\\><C-n>:q<CR>')
+-- Remap hide the terminal buffer without closing it
+vim.keymap.set('t', '<leader>H', '<C-\\><C-n>:hide<CR>:q<CR>')
