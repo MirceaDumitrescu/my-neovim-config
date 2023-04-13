@@ -25,6 +25,11 @@ vim.keymap.set("n", "<leader>p", [["+p]])
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+
+-- Remap jk to <Esc> in insert mode
+vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("i", "kj", "<Esc>")
+
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
