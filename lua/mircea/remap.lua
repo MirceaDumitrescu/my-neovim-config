@@ -32,24 +32,13 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
-
 -- setup mapping to call :LazyGit
 vim.keymap.set('n', '<leader>gg', vim.cmd.LazyGit)
 
 
 -- save file
 vim.keymap.set('n', '<C-s>', '<cmd>w<CR>')
-vim.keymap.set('n', '<leader>q', vim.cmd.q)
-
-
--- navigate between tabs
-vim.keymap.set("n", "<leader>h", "<cmd>tabprevious<CR>")
-vim.keymap.set("n", "<leader>l", "<cmd>tabnext<CR>")
-vim.keymap.set("n", "<leader>1", "<cmd>tabfirst<CR>")
-vim.keymap.set("n", "<leader>2", "<cmd>tablast<CR>")
+vim.keymap.set('n', '<leader>q', ':bd<CR>')
 
 
 -- navigate between buffers
@@ -77,12 +66,15 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 -- Split remaps to open new split in the same directory
 vim.keymap.set('n', '<leader>h', ':vsp<CR>:cd %:p:h<CR>:pwd<CR>')
 vim.keymap.set('n', '<leader>v', ':sp<CR>:cd %:p:h<CR>:pwd<CR>')
-vim.keymap.set('n', '<leader>q', ':q<CR>')
-vim.keymap.set('n', '<leader>Q', ':qa<CR>')
+
 -- Remap to open a new horizontal split with tree explorer using vim.cmd.ex
 vim.keymap.set('n', '<leader>E', ':30vsp<CR>:Ex<CR>')
-vim.keymap.set('n', '<leader>t', ':30sp<CR>:terminal<CR>i')
+vim.keymap.set('n', '<leader>t', ':bel 15sp<CR>:terminal<CR>i')
 vim.keymap.set('n', '<leader>T', ':terminal<CR>i')
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
-vim.keymap.set('t', '<leader>q', '<C-\\><C-n>:q<CR>')
-vim.keymap.set('t', '<leader>H', '<C-\\><C-n>:hide<CR>:q<CR>')
+vim.keymap.set('t', '<leader>q', '<C-\\><C-n>:bd<CR>')
+vim.keymap.set('t', '<leader>H', '<C-\\><C-n>:hide<CR>')
+vim.keymap.set('n', '<leader>r', ':b zsh<CR>')
+vim.keymap.set('n', '[p', ':bprev<CR>')
+vim.keymap.set('n', ']p', ':bnext<CR>')
+                                        
