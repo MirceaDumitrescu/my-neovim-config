@@ -1,4 +1,8 @@
 
+vim.keymap.set('n', '<leader>q', ':q<CR>')
+vim.keymap.set('n', '<leader>Q', ':qa<CR>')
+vim.keymap.set('n', '<leader>q', ':q<CR>')
+vim.keymap.set('n', '<leader>Q', ':qa<CR>')
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
@@ -77,4 +81,6 @@ vim.keymap.set('t', '<leader>H', '<C-\\><C-n>:hide<CR>')
 vim.keymap.set('n', '<leader>r', ':b zsh<CR>')
 vim.keymap.set('n', '[p', ':bprev<CR>')
 vim.keymap.set('n', ']p', ':bnext<CR>')
+vim.keymap.set('t', '[p', '<C-\\><C-n>:bprev<CR>')
+vim.keymap.set('t', ']p', '<C-\\><C-n>:bnext<CR>')
                                         
