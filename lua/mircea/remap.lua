@@ -1,4 +1,3 @@
-
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>Q', ':qa<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
@@ -72,15 +71,13 @@ vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
--- Split remaps to open new split in the same directory
-vim.keymap.set('n', '<leader>h', ':vsp<CR>:cd %:p:h<CR>:pwd<CR>')
-vim.keymap.set('n', '<leader>v', ':sp<CR>:cd %:p:h<CR>:pwd<CR>')
 
 -- Remap to open a new horizontal split with tree explorer using vim.cmd.ex
 vim.keymap.set('n', '<leader>E', ':30vsp<CR>:Ex<CR>')
 vim.keymap.set('n', '<leader>t', ':bel 15sp<CR>:terminal<CR>i')
 vim.keymap.set('n', '<leader>T', ':terminal<CR>i')
 vim.keymap.set('n', '<leader>tt',':FloatermNew<CR>')
+vim.keymap.set('n', '<leader>lf', ':FloatermNew lf<CR>')
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 vim.keymap.set('t', '<leader>q', '<C-\\><C-n>:q<CR>')
 vim.keymap.set('t', '<leader>H', '<C-\\><C-n>:hide<CR>')
@@ -96,3 +93,9 @@ vim.keymap.set('n', 'sw', 'viw')
 -- Copy the selected word to clipboard directly in one command
 vim.keymap.set('n', 'sW', 'viw"+y')
 
+
+-- split remap
+-- split right and open tree
+vim.keymap.set('n', '<leader>sv', ':vsp<CR>:Ex<CR>')
+-- split below and open trej
+vim.keymap.set('n', '<leader>sh', ':sp<CR>:Ex<CR>')

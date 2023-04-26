@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/mircea/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
+  ["live-server.nvim"] = {
+    loaded = true,
+    path = "/home/mircea/.local/share/nvim/site/pack/packer/start/live-server.nvim",
+    url = "https://github.com/barrett-ruth/live-server.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/mircea/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -265,14 +270,14 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-terminal]], true)
 try_loadstring("\27LJ\2\nX\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\18nvim-terminal\frequire\vhidden\6o\bvim\0", "config", "nvim-terminal")
 time([[Config for nvim-terminal]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\nC\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\nC\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
 -- Config for: themer.lua
 time([[Config for themer.lua]], true)
 try_loadstring("\27LJ\2\n—\2\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\0035\4\t\0=\4\n\0035\4\v\0=\4\f\0035\4\r\0=\4\14\3=\3\15\2B\0\2\1K\0\1\0\vstyles\14parameter\1\0\1\nstyle\vitalic\20variableBuiltIn\1\0\1\nstyle\vitalic\rvariable\1\0\1\nstyle\vitalic\20functionbuiltin\1\0\1\nstyle\vitalic\rfunction\1\0\0\1\0\1\nstyle\vitalic\1\0\1\16colorscheme\14rose_pine\nsetup\vthemer\frequire\0", "config", "themer.lua")
