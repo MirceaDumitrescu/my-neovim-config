@@ -97,6 +97,7 @@ return require('packer').startup(function(use)
   use("akinsho/toggleterm.nvim")
   use('brenoprata10/nvim-highlight-colors')
   use('matbme/JABS.nvim')
+  use 'voldikss/vim-floaterm'
 
 end)
 
