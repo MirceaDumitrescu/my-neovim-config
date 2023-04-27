@@ -15,4 +15,10 @@ To install run :PackerSync
 ![image](https://user-images.githubusercontent.com/16415899/234888429-2df78806-216f-484a-ab8c-47b98707a89b.png)
 
 #Easy keybindings for split flow
-![image](https://user-images.githubusercontent.com/16415899/234888950-9d790382-8cd8-460c-a751-80f679dfd302.png)
+![image](https://user-images.githubusercontent.com/16415899/234889132-50369913-f5a3-4b89-9b4f-cb097230e26a.png)
+
+#LSP configured for most languages
+![image](https://user-images.githubusercontent.com/16415899/234889359-ee00859e-b1b6-4de7-927d-1359011229a3.png)
+
+#LazyGit
+![image](https://user-images.githubusercontent.com/16415899/234889456-7e9e8895-537e-41e7-bdb0-4fb53b613c9c.png)
