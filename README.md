@@ -15,4 +15,4 @@ To install run :PackerSync
 ![image](https://user-images.githubusercontent.com/16415899/234888429-2df78806-216f-484a-ab8c-47b98707a89b.png)
 
 #Easy keybindings for split flow
-![image](https://user-images.githubusercontent.com/16415899/234888763-03ab188c-88b8-466c-9572-bc64b5742cc9.png)
+![image](https://user-images.githubusercontent.com/16415899/234888950-9d790382-8cd8-460c-a751-80f679dfd302.png)
