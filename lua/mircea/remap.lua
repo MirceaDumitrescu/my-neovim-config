@@ -1,6 +1,6 @@
 vim.keymap.set('n', '<leader>q', ':q<CR>')
+vim.keymap.set('i', '<leader>q', '<Esc>:q<CR>')
 vim.keymap.set('n', '<leader>Q', ':qa<CR>')
-vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>Q', ':qa<CR>')
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
@@ -46,8 +46,6 @@ vim.keymap.set('n', '<leader>gg', vim.cmd.LazyGit)
 
 -- save file
 vim.keymap.set('n', '<C-s>', '<cmd>w<CR>')
-vim.keymap.set('n', '<leader>q', ':bd<CR>')
-
 
 -- navigate between buffers
 vim.keymap.set("n", "<leader><leader>", ":JABSOpen<CR>")

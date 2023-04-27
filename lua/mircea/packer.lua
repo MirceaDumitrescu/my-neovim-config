@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use('AlexvZyl/nordic.nvim')
+  use('AlexvZyl/nordic.nvim') -- Theme
 
 
   use({
@@ -21,12 +21,19 @@ return require('packer').startup(function(use)
       config = function()
           require("trouble").setup {
               icons = false,
-              -- your configuration comes here
-              -- or leave it empty to use the default settings
-              -- refer to the configuration section below
           }
       end
   })
+
+  use({
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+          require("todo-comments").setup {}
+      end
+  })
+
+  use('nvim-tree/nvim-web-devicons')
 
 
   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
@@ -62,7 +69,6 @@ return require('packer').startup(function(use)
 
   use("github/copilot.vim")
   use('kdheepak/lazygit.nvim')
-  use('mrjones2014/smart-splits.nvim')
   use('prettier/vim-prettier')
   use {
       's1n7ax/nvim-terminal',
@@ -71,11 +77,9 @@ return require('packer').startup(function(use)
           require('nvim-terminal').setup()
       end,
   }
-  use("tpope/vim-commentary")
-  use("turbio/bracey.vim")
-  use("akinsho/toggleterm.nvim")
-  use('brenoprata10/nvim-highlight-colors')
-  use('matbme/JABS.nvim')
+  use("tpope/vim-commentary") -- Commenting
+  use('brenoprata10/nvim-highlight-colors') -- Highlight colors
+  use('matbme/JABS.nvim') -- Just Another Buffer Switcher
   use ('voldikss/vim-floaterm')
   use('barrett-ruth/live-server.nvim', { run = 'npm install -g live-server' })
 
