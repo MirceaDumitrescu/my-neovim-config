@@ -22,3 +22,5 @@ To install run :PackerSync
 
 #LazyGit
 ![image](https://user-images.githubusercontent.com/16415899/234889456-7e9e8895-537e-41e7-bdb0-4fb53b613c9c.png)
+
+Thanks for checking it out, leave feedback !
