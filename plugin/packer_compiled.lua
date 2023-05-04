@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/mircea/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["bracey.vim"] = {
-    loaded = true,
-    path = "/home/mircea/.local/share/nvim/site/pack/packer/start/bracey.vim",
-    url = "https://github.com/turbio/bracey.vim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/mircea/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -190,6 +185,11 @@ _G.packer_plugins = {
     path = "/home/mircea/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/mircea/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/mircea/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -210,20 +210,16 @@ _G.packer_plugins = {
     path = "/home/mircea/.local/share/nvim/site/pack/packer/start/refactoring.nvim",
     url = "https://github.com/theprimeagen/refactoring.nvim"
   },
-  ["smart-splits.nvim"] = {
-    loaded = true,
-    path = "/home/mircea/.local/share/nvim/site/pack/packer/start/smart-splits.nvim",
-    url = "https://github.com/mrjones2014/smart-splits.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/mircea/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["toggleterm.nvim"] = {
+  ["todo-comments.nvim"] = {
+    config = { "\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0" },
     loaded = true,
-    path = "/home/mircea/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
+    path = "/home/mircea/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["trouble.nvim"] = {
     config = { "\27LJ\2\nC\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0" },
@@ -267,6 +263,10 @@ time([[Config for trouble.nvim]], false)
 time([[Config for nvim-terminal]], true)
 try_loadstring("\27LJ\2\nX\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\18nvim-terminal\frequire\vhidden\6o\bvim\0", "config", "nvim-terminal")
 time([[Config for nvim-terminal]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
