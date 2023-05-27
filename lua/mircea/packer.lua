@@ -81,7 +81,7 @@ return require('packer').startup(function(use)
   use('brenoprata10/nvim-highlight-colors') -- Highlight colors
   use('matbme/JABS.nvim') -- Just Another Buffer Switcher
   use ('voldikss/vim-floaterm')
-  use('barrett-ruth/live-server.nvim', { run = 'npm install -g live-server' })
+  use('barrett-ruth/live-server.nvim', { build = 'npm install -g live-server', config=true })
 
 end)
 

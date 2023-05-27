@@ -72,7 +72,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Remap to open a new horizontal split with tree explorer using vim.cmd.ex
 vim.keymap.set('n', '<leader>E', ':30vsp<CR>:Ex<CR>')
-vim.keymap.set('n', '<leader>t', ':bel 15sp<CR>:terminal<CR>i')
+vim.keymap.set('n', '<leader>ter', ':bel 15sp<CR>:terminal<CR>i')
 vim.keymap.set('n', '<leader>T', ':terminal<CR>i')
 vim.keymap.set('n', '<leader>tt',':FloatermNew<CR>')
 vim.keymap.set('n', '<leader>lf', ':FloatermNew lf<CR>')
@@ -98,3 +98,10 @@ vim.keymap.set('n', 'sW', 'viw"+y')
 vim.keymap.set('n', '<leader>sv', ':vsp<CR>:Ex<CR>')
 -- split below and open trej
 vim.keymap.set('n', '<leader>sh', ':sp<CR>:Ex<CR>')
+
+
+-- Specific JTI remaps
+vim.keymap.set('n', '<leader>tb', ':bel 15sp<CR>:terminal<CR>i<CR>mvn clean install -Pdeploy,all,author<CR>')
+vim.keymap.set('n', '<leader>ts', ':30vsp<CR>:terminal<CR>i<CR>npm run serve<CR>')
+vim.keymap.set('n', '<leader>tw', ':30vsp<CR>:terminal<CR>i<CR>npm run watch<CR>')
+vim.keymap.set('n', '<leader>fb', ':FloatermNew<CR>mvn clean install -Pdeploy,all,author<CR>')
