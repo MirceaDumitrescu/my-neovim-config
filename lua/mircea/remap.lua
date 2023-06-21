@@ -104,3 +104,10 @@ vim.keymap.set('n', '<leader>tb', ':bel 15sp<CR>:terminal<CR>i<CR>mvn clean inst
 vim.keymap.set('n', '<leader>ts', ':30vsp<CR>:terminal<CR>i<CR>npm run serve<CR>')
 vim.keymap.set('n', '<leader>tw', ':30vsp<CR>:terminal<CR>i<CR>npm run watch<CR>')
 vim.keymap.set('n', '<leader>fb', ':FloatermNew<CR>mvn clean install -Pdeploy,all,author<CR>')
+
+
+-- ChatGPT.nvim remaps
+vim.keymap.set('n', '<leader>cc', ':ChatGPT<CR>')
+vim.keymap.set('n', '<leader>ce', ':ChatGPTEditWithInstructions<CR>')
+vim.keymap.set('n', '<leader>cm', ':ChatGPTCompleteCode<CR>')
+
