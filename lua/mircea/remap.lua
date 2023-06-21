@@ -110,4 +110,6 @@ vim.keymap.set('n', '<leader>fb', ':FloatermNew<CR>mvn clean install -Pdeploy,al
 vim.keymap.set('n', '<leader>cc', ':ChatGPT<CR>')
 vim.keymap.set('n', '<leader>ce', ':ChatGPTEditWithInstructions<CR>')
 vim.keymap.set('n', '<leader>cm', ':ChatGPTCompleteCode<CR>')
-
+vim.keymap.set('n', '<leader>co', ':ChatGPTRun optimize_code<CR>')
+vim.keymap.set('n', '<leader>cf', ':ChatGPTRun fix_bugs<CR>')
+vim.keymap.set('n', '<leader>cx', ':ChatGPTRun explain_code<CR>')
