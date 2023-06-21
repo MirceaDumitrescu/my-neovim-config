@@ -79,9 +79,20 @@ return require('packer').startup(function(use)
   }
   use("tpope/vim-commentary") -- Commenting
   use('brenoprata10/nvim-highlight-colors') -- Highlight colors
-  use('matbme/JABS.nvim') -- Just Another Buffer Switcher
-  use ('voldikss/vim-floaterm')
+  use('voldikss/vim-floaterm')
   use('barrett-ruth/live-server.nvim', { build = 'npm install -g live-server', config=true })
-
+  use({
+     "jackMort/ChatGPT.nvim",
+     config = function()
+     require("chatgpt").setup({
+        api_key_cmd ="/home/mircea/get_api_key.sh"
+     })
+     end,
+       requires = {
+         "MunifTanjim/nui.nvim",
+         "nvim-lua/plenary.nvim",
+         "nvim-telescope/telescope.nvim"
+          }
+        })
 end)
 

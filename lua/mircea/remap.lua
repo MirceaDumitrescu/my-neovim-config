@@ -48,7 +48,6 @@ vim.keymap.set('n', '<leader>gg', vim.cmd.LazyGit)
 vim.keymap.set('n', '<C-s>', '<cmd>w<CR>')
 
 -- navigate between buffers
-vim.keymap.set("n", "<leader><leader>", ":JABSOpen<CR>")
 vim.keymap.set("n", "<leader>w", "<cmd>Prettier<CR>:w<CR>")
 
 -- Terminal mapping
