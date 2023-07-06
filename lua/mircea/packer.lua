@@ -85,7 +85,7 @@ return require('packer').startup(function(use)
      "jackMort/ChatGPT.nvim",
      config = function()
      require("chatgpt").setup({
-        api_key_cmd ="/home/mircea/get_api_key.sh"
+        api_key_cmd ="/home/tux/get_api_key.sh"
      })
      end,
        requires = {
