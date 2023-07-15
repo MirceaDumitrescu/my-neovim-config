@@ -81,5 +81,37 @@ return require('packer').startup(function(use)
   use('brenoprata10/nvim-highlight-colors') -- Highlight colors
   use('voldikss/vim-floaterm')
   use('barrett-ruth/live-server.nvim', { build = 'npm install -g live-server', config=true })
+  use {
+  'phaazon/hop.nvim',
+  branch = 'v2', -- optional but strongly recommended
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+  end
+}
+use "sindrets/diffview.nvim"
+use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+use 'romgrk/barbar.nvim'
+use 'ray-x/web-tools.nvim'
+use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+})
+use { 'm-demare/hlargs.nvim' }
+use {
+  'glepnir/dashboard-nvim',
+  event = 'VimEnter',
+  config = function()
+    require('dashboard').setup {
+      -- config
+    }
+  end,
+  requires = {'nvim-tree/nvim-web-devicons'}
+}
 end)
 

@@ -113,3 +113,11 @@ vim.keymap.set('n', '<leader>cm', ':ChatGPTCompleteCode<CR>')
 vim.keymap.set('n', '<leader>co', ':ChatGPTRun optimize_code<CR>')
 vim.keymap.set('n', '<leader>cf', ':ChatGPTRun fix_bugs<CR>')
 vim.keymap.set('n', '<leader>cx', ':ChatGPTRun explain_code<CR>')
+
+
+-- DiffView remaps
+vim.keymap.set('n', '<leader>dc', ':DiffviewOpen<CR>')
+vim.keymap.set('n', '<leader>do', ':DiffviewOpen origin/master<CR>')
+vim.keymap.set('n', '<leader>dq', ':DiffviewClose<CR>')
+vim.keymap.set('n', '<leader>dh', ':DiffviewFileHistory<CR>')
+
