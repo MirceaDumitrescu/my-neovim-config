@@ -81,18 +81,5 @@ return require('packer').startup(function(use)
   use('brenoprata10/nvim-highlight-colors') -- Highlight colors
   use('voldikss/vim-floaterm')
   use('barrett-ruth/live-server.nvim', { build = 'npm install -g live-server', config=true })
-  use({
-     "jackMort/ChatGPT.nvim",
-     config = function()
-     require("chatgpt").setup({
-        api_key_cmd ="/home/tux/get_api_key.sh"
-     })
-     end,
-       requires = {
-         "MunifTanjim/nui.nvim",
-         "nvim-lua/plenary.nvim",
-         "nvim-telescope/telescope.nvim"
-          }
-        })
 end)
 
