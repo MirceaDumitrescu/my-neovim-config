@@ -79,6 +79,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 vim.keymap.set('t', '<leader>q', '<C-\\><C-n>:q<CR>')
 vim.keymap.set('t', '<leader>H', '<C-\\><C-n>:hide<CR>')
 vim.keymap.set('n', '<leader>q', ':bp|bd #<CR>')
+vim.keymap.set('n', '<leader>Q', ':quit<CR>')
 vim.keymap.set('n', '<leader>r', ':b zsh<CR>')
 vim.keymap.set('n', '[p', ':bprev<CR>')
 vim.keymap.set('n', ']p', ':bnext<CR>')
@@ -92,7 +93,6 @@ vim.keymap.set('n', 'sw', 'viw')
 vim.keymap.set('n', 'sW', 'viw"+y')
 
 
--- split remap
 -- split right and open tree
 vim.keymap.set('n', '<leader>sv', ':vsp<CR>:Ex<CR>')
 -- split below and open trej
@@ -120,4 +120,7 @@ vim.keymap.set('n', '<leader>dc', ':DiffviewOpen<CR>')
 vim.keymap.set('n', '<leader>do', ':DiffviewOpen origin/master<CR>')
 vim.keymap.set('n', '<leader>dq', ':DiffviewClose<CR>')
 vim.keymap.set('n', '<leader>dh', ':DiffviewFileHistory<CR>')
+
+-- Select and copy all file
+vim.keymap.set('n', '<leader>ca', 'ggVG"+y')
 
