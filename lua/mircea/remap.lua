@@ -85,13 +85,6 @@ vim.keymap.set('n', '[p', ':bprev<CR>')
 vim.keymap.set('n', ']p', ':bnext<CR>')
 vim.keymap.set('t', '[p', '<C-\\><C-n>:bprev<CR>')
 vim.keymap.set('t', ']p', '<C-\\><C-n>:bnext<CR>')
-                                        
-
--- Select the word under cursor
-vim.keymap.set('n', 'sw', 'viw')
--- Copy the selected word to clipboard directly in one command
-vim.keymap.set('n', 'sW', 'viw"+y')
-
 
 -- split right and open tree
 vim.keymap.set('n', '<leader>sv', ':vsp<CR>:Ex<CR>')
