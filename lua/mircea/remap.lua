@@ -1,3 +1,5 @@
+-- ignore vim not globally defined
+
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('i', '<leader>q', '<Esc>:q<CR>')
 vim.keymap.set('n', '<leader>Q', ':qa<CR>')
@@ -8,7 +10,41 @@ vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- Move to next buffer window tab using :BufferNext
+vim.keymap.set("n", "<leader>l", "<cmd>BufferNext<CR>")
+vim.keymap.set("n", "<leader>h", "<cmd>BufferPrevious<CR>")
 
+-- Move the buffer position
+vim.keymap.set("n", "<leader>ml", "<cmd>BufferMoveNext<CR>")
+vim.keymap.set("n", "<leader>mh", "<cmd>BufferMovePrevious<CR>")
+vim.keymap.set('n', '[p', ':bprev<CR>')
+vim.keymap.set('n', ']p', ':bnext<CR>')
+vim.keymap.set('t', '[p', '<C-\\><C-n>:bprev<CR>')
+vim.keymap.set('t', ']p', '<C-\\><C-n>:bnext<CR>')
+
+-- Go to buffer in position 
+vim.keymap.set("n", "<leader>1", "<cmd>BufferGoto 1<CR>")
+vim.keymap.set("n", "<leader>2", "<cmd>BufferGoto 2<CR>")
+vim.keymap.set("n", "<leader>3", "<cmd>BufferGoto 3<CR>")
+vim.keymap.set("n", "<leader>4", "<cmd>BufferGoto 4<CR>")
+vim.keymap.set("n", "<leader>5", "<cmd>BufferGoto 5<CR>")
+vim.keymap.set("n", "<leader>6", "<cmd>BufferGoto 6<CR>")
+
+-- Close  buffer
+vim.keymap.set("n", "<leader>bd", "<cmd>BufferClose<CR>")
+
+-- Pin buffer
+vim.keymap.set("n", "<leader>bp", "<cmd>BufferPin<CR>")
+
+vim.keymap.set("n", "<leader>bw", "<cmd>BufferWipeout<CR>")
+vim.keymap.set("n", "<leader>ba", "<cmd>BufferCloseAllButCurrent<CR>")
+vim.keymap.set("n", "<leader>bb", "<cmd>BufferCloseAllButVisible<CR>")
+vim.keymap.set("n", "<leader>bp", "<cmd>BufferCloseAllButPinned<CR>")
+vim.keymap.set("n", "<leader>bc", "<cmd>BufferCloseAllButCurrentOrPinned<CR>")
+vim.keymap.set("n", "<leader>bl", "<cmd>BufferCloseBuffersLeft<CR>")
+vim.keymap.set("n", "<leader>br", "<cmd>BufferCloseBuffersRight<CR>")
+
+vim.keymap.set("n", "<C-l>", "<C-w>l")
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -68,6 +104,11 @@ vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
+-- Split pane navigation when in insert mode
+vim.keymap.set('i', '<C-h>', '<Esc><C-w>h')
+vim.keymap.set('i', '<C-j>', '<Esc><C-w>j')
+vim.keymap.set('i', '<C-k>', '<Esc><C-w>k')
+vim.keymap.set('i', '<C-l>', '<Esc><C-w>l')
 
 -- Remap to open a new horizontal split with tree explorer using vim.cmd.ex
 vim.keymap.set('n', '<leader>E', ':30vsp<CR>:Ex<CR>')
@@ -81,10 +122,6 @@ vim.keymap.set('t', '<leader>H', '<C-\\><C-n>:hide<CR>')
 vim.keymap.set('n', '<leader>q', ':bp|bd #<CR>')
 vim.keymap.set('n', '<leader>Q', ':quit<CR>')
 vim.keymap.set('n', '<leader>r', ':b zsh<CR>')
-vim.keymap.set('n', '[p', ':bprev<CR>')
-vim.keymap.set('n', ']p', ':bnext<CR>')
-vim.keymap.set('t', '[p', '<C-\\><C-n>:bprev<CR>')
-vim.keymap.set('t', ']p', '<C-\\><C-n>:bnext<CR>')
 
 -- split right and open tree
 vim.keymap.set('n', '<leader>sv', ':vsp<CR>:Ex<CR>')
@@ -114,6 +151,5 @@ vim.keymap.set('n', '<leader>do', ':DiffviewOpen origin/master<CR>')
 vim.keymap.set('n', '<leader>dq', ':DiffviewClose<CR>')
 vim.keymap.set('n', '<leader>dh', ':DiffviewFileHistory<CR>')
 
--- Select and copy all file
-vim.keymap.set('n', '<leader>ca', 'ggVG"+y')
-
+-- Select all
+vim.keymap.set('n', '<leader>a', 'gg<S-v>G')
