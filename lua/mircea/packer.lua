@@ -13,7 +13,30 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use('AlexvZyl/nordic.nvim') -- Theme
+ use("folke/tokyonight.nvim")
+  -- nvim-java and its dependencies
+  use 'nvim-java/nvim-java'
+  use 'nvim-java/lua-async-await'
+  use 'nvim-java/nvim-java-core'
+  use 'nvim-java/nvim-java-test'
+  use 'nvim-java/nvim-java-dap'
+  
+  -- Additional dependencies
+  use 'MunifTanjim/nui.nvim'
+  use 'mfussenegger/nvim-dap'
+
+  -- Mason with specific configuration
+  use {
+    'williamboman/mason.nvim',
+    config = function()
+      require('mason').setup {
+        registries = {
+          ['github:nvim-java'] = 'github:nvim-java/mason-registry',
+          ['github:mason-org'] = 'github:mason-org/mason-registry',
+        }
+      }
+    end
+  }
 
 
   use({
