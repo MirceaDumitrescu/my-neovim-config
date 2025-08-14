@@ -30,7 +30,7 @@ if not lspconfig_status then
 else
   mason_lspconfig.setup({
     ensure_installed = {
-      "tsserver", -- TypeScript/JavaScript
+      "ts_ls", -- TypeScript/JavaScript (updated name)
       "html", -- HTML
       "cssls", -- CSS
       "tailwindcss", -- Tailwind CSS
@@ -39,7 +39,7 @@ else
       "eslint", -- ESLint
       "pyright", -- Python
       "rust_analyzer", -- Rust
-      "gopls", -- Go
+      -- "gopls", -- Go (requires Go to be installed first)
     },
     automatic_installation = true,
   })

@@ -17,66 +17,60 @@ local code_actions = null_ls.builtins.code_actions
 -- Create an autogroup for formatting
 local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 
+-- Build sources array conditionally
+local sources = {
+  -- Formatters
+  formatting.prettier.with({
+    filetypes = {
+      "javascript",
+      "javascriptreact", 
+      "typescript",
+      "typescriptreact",
+      "vue",
+      "css",
+      "scss",
+      "less",
+      "html",
+      "json",
+      "jsonc",
+      "yaml",
+      "markdown",
+      "graphql",
+      "svelte",
+    },
+    extra_args = function(params)
+      return params.options
+        and params.options.tabSize
+        and {
+          "--tab-width",
+          params.options.tabSize,
+        }
+    end,
+  }),
+  
+  -- Python formatter
+  formatting.black.with({
+    extra_args = { "--line-length", "88", "--fast" },
+  }),
+  
+  -- Lua formatter
+  formatting.stylua.with({
+    extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
+  }),
+  
+  -- Shell formatter
+  formatting.shfmt,
+  
+  -- Code Actions
+  code_actions.gitsigns,
+}
+
+-- ESLint support is better handled through LSP (eslint server)
+-- none-ls doesn't have reliable eslint_d builtin support
+
 null_ls.setup({
   debug = false,
-  sources = {
-    -- Formatters
-    formatting.prettier.with({
-      filetypes = {
-        "javascript",
-        "javascriptreact", 
-        "typescript",
-        "typescriptreact",
-        "vue",
-        "css",
-        "scss",
-        "less",
-        "html",
-        "json",
-        "jsonc",
-        "yaml",
-        "markdown",
-        "graphql",
-        "svelte",
-      },
-      extra_args = function(params)
-        return params.options
-          and params.options.tabSize
-          and {
-            "--tab-width",
-            params.options.tabSize,
-          }
-      end,
-    }),
-    
-    -- Python formatter
-    formatting.black.with({
-      extra_args = { "--line-length", "88", "--fast" },
-    }),
-    
-    -- Lua formatter
-    formatting.stylua.with({
-      extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
-    }),
-    
-    -- Shell formatter
-    formatting.shfmt,
-    
-    -- Diagnostics (only if files exist to avoid errors)
-    diagnostics.eslint_d.with({
-      condition = function(utils)
-        return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json", ".eslintrc", ".eslintrc.yml", "eslint.config.js" })
-      end,
-    }),
-    
-    -- Code Actions
-    code_actions.eslint_d.with({
-      condition = function(utils)
-        return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json", ".eslintrc", ".eslintrc.yml", "eslint.config.js" })
-      end,
-    }),
-    code_actions.gitsigns,
-  },
+  sources = sources,
   
   -- Format on save
   on_attach = function(client, bufnr)

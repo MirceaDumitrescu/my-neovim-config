@@ -19,13 +19,13 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "startup",
   callback = function()
     vim.cmd([[
-      highlight StartupHeader guifg=#FF6B9D gui=bold
-      highlight StartupFooter guifg=#6BCB77 gui=italic
-      highlight StartupBorder guifg=#C66FBC
-      highlight StartupFile guifg=#FFB4B4
-      highlight StartupPath guifg=#7FC7D9
-      highlight StartupKey guifg=#FFD93D gui=bold
-      highlight StartupFoldedSection guifg=#56b6c2
+      highlight StartupHeader guifg=#FF69B4 gui=bold
+      highlight StartupFooter guifg=#00FFFF gui=italic
+      highlight StartupBorder guifg=#FF1493
+      highlight StartupFile guifg=#FFB6C1
+      highlight StartupPath guifg=#87CEEB
+      highlight StartupKey guifg=#FFD700 gui=bold
+      highlight StartupFoldedSection guifg=#FF69B4
     ]])
   end
 })
