@@ -1,19 +1,55 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
--- Only required if you have packer configured as `opt`
-vim.cmd.packadd('packer.nvim')
+-- Bootstrap Packer if not installed
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  -- or                            , branch = '0.1.x',
+	  'nvim-telescope/telescope.nvim',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
  use("folke/tokyonight.nvim")
+ 
+  -- Rose Pine theme
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    config = function()
+      require("rose-pine").setup({
+        variant = "auto", -- auto, main, moon, or dawn
+        dark_variant = "main", -- main, moon, or dawn
+        dim_inactive_windows = false,
+        extend_background_behind_borders = true,
+        
+        enable = {
+          terminal = true,
+          legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+          migrations = true, -- Handle deprecated options automatically
+        },
+        
+        styles = {
+          bold = true,
+          italic = true,
+          transparency = true,
+        },
+      })
+    end
+  })
   -- nvim-java and its dependencies
   use 'nvim-java/nvim-java'
   use 'nvim-java/lua-async-await'
@@ -25,18 +61,8 @@ return require('packer').startup(function(use)
   use 'MunifTanjim/nui.nvim'
   use 'mfussenegger/nvim-dap'
 
-  -- Mason with specific configuration
-  use {
-    'williamboman/mason.nvim',
-    config = function()
-      require('mason').setup {
-        registries = {
-          ['github:nvim-java'] = 'github:nvim-java/mason-registry',
-          ['github:mason-org'] = 'github:mason-org/mason-registry',
-        }
-      }
-    end
-  }
+  -- Mason needs to be loaded before mason-lspconfig
+  use('williamboman/mason.nvim')
 
 
   use({
@@ -57,9 +83,47 @@ return require('packer').startup(function(use)
   })
 
   use('nvim-tree/nvim-web-devicons')
+  
+  -- Notification plugin
+  use({
+    'rcarriga/nvim-notify',
+    config = function()
+      require("notify").setup({
+        stages = "fade_in_slide_out",
+        render = "compact",
+        timeout = 3000,
+        background_colour = "Normal",
+        minimum_width = 50,
+        icons = {
+          ERROR = "",
+          WARN = "",
+          INFO = "",
+          DEBUG = "",
+          TRACE = "✎",
+        },
+      })
+      vim.notify = require("notify")
+    end
+  })
+  
+  -- Image viewing in Neovim
+  use({
+    'edluffy/hologram.nvim',
+    config = function()
+      require('hologram').setup({
+        auto_display = true -- automatically display images
+      })
+    end
+  })
+  
+  -- Seamless navigation between tmux panes and vim splits
+  use('christoomey/vim-tmux-navigator')
 
 
-  use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
+  use({"nvim-treesitter/nvim-treesitter", run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+  end})
   use("nvim-treesitter/playground")
   use("theprimeagen/harpoon")
   use("theprimeagen/refactoring.nvim")
@@ -73,7 +137,6 @@ return require('packer').startup(function(use)
 	  requires = {
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
 		  {'williamboman/mason-lspconfig.nvim'},
 
 		  -- Autocompletion
@@ -126,25 +189,28 @@ use({
 })
 use { 'm-demare/hlargs.nvim' }
 use {
-  'glepnir/dashboard-nvim',
-  event = 'VimEnter',
-  config = function()
-    require('dashboard').setup {
-      -- config
-    }
-  end,
-  requires = {'nvim-tree/nvim-web-devicons'}
+  'startup-nvim/startup.nvim',
+  requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'}
 }
 use('neovim/nvim-lspconfig')
-use('jose-elias-alvarez/null-ls.nvim')
+use('nvimtools/none-ls.nvim') -- Updated fork of null-ls
 use('MunifTanjim/prettier.nvim')
+use('jay-babu/mason-null-ls.nvim')
 use({
 	"L3MON4D3/LuaSnip",
 	-- follow latest release.
-	tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	tag = "v2.*", -- Using version 2
 	-- install jsregexp (optional!:).
 	run = "make install_jsregexp"
 })
 use "rafamadriz/friendly-snippets"
+
+  -- Claude Code integration
+  use 'greggh/claude-code.nvim'
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
 

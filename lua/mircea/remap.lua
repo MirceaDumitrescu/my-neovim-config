@@ -1,10 +1,12 @@
 -- ignore vim not globally defined
 
+-- Set leader key FIRST before any keymaps that use it
+vim.g.mapleader = " "
+
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('i', '<leader>q', '<Esc>:q<CR>')
 vim.keymap.set('n', '<leader>Q', ':qa<CR>')
 vim.keymap.set('n', '<leader>Q', ':qa<CR>')
-vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -44,7 +46,7 @@ vim.keymap.set("n", "<leader>bc", "<cmd>BufferCloseAllButCurrentOrPinned<CR>")
 vim.keymap.set("n", "<leader>bl", "<cmd>BufferCloseBuffersLeft<CR>")
 vim.keymap.set("n", "<leader>br", "<cmd>BufferCloseBuffersRight<CR>")
 
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+-- vim.keymap.set("n", "<C-l>", "<C-w>l") -- Disabled for tmux-navigator
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -67,8 +69,11 @@ vim.keymap.set("i", "kj", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz") -- Disabled for tmux-navigator
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz") -- Disabled for tmux-navigator
+-- Use leader versions instead for quickfix navigation
+vim.keymap.set("n", "<leader>cn", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<leader>cp", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -98,17 +103,18 @@ vim.keymap.set('n', 'L', '$')
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
--- Split Pane Navigation
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-l>', '<C-w>l')
+-- Split Pane Navigation - Disabled for tmux-navigator
+-- These are now handled by vim-tmux-navigator plugin for seamless tmux/nvim navigation
+-- vim.keymap.set('n', '<C-h>', '<C-w>h')
+-- vim.keymap.set('n', '<C-j>', '<C-w>j')
+-- vim.keymap.set('n', '<C-k>', '<C-w>k')
+-- vim.keymap.set('n', '<C-l>', '<C-w>l')
 
--- Split pane navigation when in insert mode
-vim.keymap.set('i', '<C-h>', '<Esc><C-w>h')
-vim.keymap.set('i', '<C-j>', '<Esc><C-w>j')
-vim.keymap.set('i', '<C-k>', '<Esc><C-w>k')
-vim.keymap.set('i', '<C-l>', '<Esc><C-w>l')
+-- Split pane navigation when in insert mode - Disabled for tmux-navigator
+-- vim.keymap.set('i', '<C-h>', '<Esc><C-w>h')
+-- vim.keymap.set('i', '<C-j>', '<Esc><C-w>j')
+-- vim.keymap.set('i', '<C-k>', '<Esc><C-w>k')
+-- vim.keymap.set('i', '<C-l>', '<Esc><C-w>l')
 
 -- Remap to open a new horizontal split with tree explorer using vim.cmd.ex
 vim.keymap.set('n', '<leader>E', ':30vsp<CR>:Ex<CR>')
@@ -153,3 +159,26 @@ vim.keymap.set('n', '<leader>dh', ':DiffviewFileHistory<CR>')
 
 -- Select all
 vim.keymap.set('n', '<leader>a', 'gg<S-v>G')
+
+-- Dashboard keymaps (matching the dashboard shortcuts)
+vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
+vim.keymap.set('n', '<leader>fr', ':Telescope oldfiles<CR>')
+vim.keymap.set('n', '<leader>fw', ':Telescope live_grep<CR>')
+vim.keymap.set('n', '<leader>fn', ':enew<CR>')
+vim.keymap.set('n', '<leader>gs', ':Git status<CR>')
+vim.keymap.set('n', '<leader>cc', ':ClaudeCode<CR>')
+vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>')
+vim.keymap.set('n', '<leader>pu', ':PackerUpdate<CR>')
+vim.keymap.set('n', '<leader>vc', ':edit ~/.config/nvim/init.lua<CR>')
+
+-- Quick access to startup screen
+vim.keymap.set('n', '<leader>db', ':Startup display<CR>')
+
+-- Hologram image viewing
+vim.keymap.set('n', '<leader>iv', ':lua require("hologram").view_image()<CR>', { desc = "View image" })
+vim.keymap.set('n', '<leader>it', ':lua require("hologram").toggle_images()<CR>', { desc = "Toggle images" })
+vim.keymap.set('n', '<leader>ic', ':lua require("hologram").clear_images()<CR>', { desc = "Clear images" })
+
+-- Formatting
+vim.keymap.set('n', '<leader>fm', ':Format<CR>', { desc = "Format file" })
+vim.keymap.set('n', '<leader>ft', ':ToggleFormatOnSave<CR>', { desc = "Toggle format on save" })

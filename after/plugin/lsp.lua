@@ -2,12 +2,13 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
-  'tailwindcss',
-
-})
+-- Commenting out ensure_installed as it's causing issues
+-- You can manually install these servers using :LspInstall or :Mason
+-- lsp.ensure_installed({
+--   'ts_ls',  -- TypeScript/JavaScript  
+--   'rust_analyzer',  -- Rust
+--   'tailwindcss',  -- Tailwind CSS
+-- })
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua-language-server', {
@@ -18,6 +19,13 @@ lsp.configure('lua-language-server', {
             }
         }
     }
+})
+
+-- Configure Swift LSP (sourcekit-lsp)
+lsp.configure('sourcekit', {
+    cmd = { 'sourcekit-lsp' },
+    filetypes = { 'swift', 'objective-c', 'objective-cpp' },
+    root_dir = require('lspconfig.util').root_pattern('Package.swift', '.git', '*.xcodeproj', '*.xcworkspace'),
 })
 
 
@@ -59,7 +67,8 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts) -- Disabled for tmux-navigator
+  vim.keymap.set("i", "<C-s>", function() vim.lsp.buf.signature_help() end, opts) -- Changed to C-s for signature help
 end)
 
 lsp.setup()
