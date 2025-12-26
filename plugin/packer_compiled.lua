@@ -236,12 +236,6 @@ _G.packer_plugins = {
     path = "/Users/gabrielvela/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-notify"] = {
-    config = { "\27LJ\2\nÎ\1\0\0\4\0\a\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\0016\0\6\0006\1\0\0'\3\1\0B\1\2\2=\1\1\0K\0\1\0\bvim\nicons\1\0\5\nDEBUG\5\nTRACE\b‚úé\tWARN\5\tINFO\5\nERROR\5\1\0\6\18minimum_width\0032\nicons\0\22background_colour\vNormal\ftimeout\3∏\23\vrender\fcompact\vstages\22fade_in_slide_out\nsetup\vnotify\frequire\0" },
-    loaded = true,
-    path = "/Users/gabrielvela/.local/share/nvim/site/pack/packer/start/nvim-notify",
-    url = "https://github.com/rcarriga/nvim-notify"
-  },
   ["nvim-surround"] = {
     config = { "\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0" },
     loaded = true,
@@ -295,7 +289,7 @@ _G.packer_plugins = {
     url = "https://github.com/theprimeagen/refactoring.nvim"
   },
   ["rose-pine"] = {
-    config = { "\27LJ\2\né\2\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vstyles\1\0\3\17transparency\2\vitalic\2\tbold\2\venable\1\0\3\15migrations\2\22legacy_highlights\2\rterminal\2\1\0\6\vstyles\0\fvariant\tauto\venable\0%extend_background_behind_borders\2\25dim_inactive_windows\1\17dark_variant\tmain\nsetup\14rose-pine\frequire\0" },
+    config = { "\27LJ\2\né\2\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vstyles\1\0\3\17transparency\2\vitalic\2\tbold\2\venable\1\0\3\15migrations\2\22legacy_highlights\2\rterminal\2\1\0\6\17dark_variant\tmain\vstyles\0\fvariant\tauto\venable\0%extend_background_behind_borders\2\25dim_inactive_windows\1\nsetup\14rose-pine\frequire\0" },
     loaded = true,
     path = "/Users/gabrielvela/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
@@ -365,10 +359,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
-time([[Config for hop.nvim]], false)
 -- Config for: nvim-surround
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
@@ -377,26 +367,26 @@ time([[Config for nvim-surround]], false)
 time([[Config for nvim-terminal]], true)
 try_loadstring("\27LJ\2\nX\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\18nvim-terminal\frequire\vhidden\6o\bvim\0", "config", "nvim-terminal")
 time([[Config for nvim-terminal]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+try_loadstring("\27LJ\2\né\2\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vstyles\1\0\3\17transparency\2\vitalic\2\tbold\2\venable\1\0\3\15migrations\2\22legacy_highlights\2\rterminal\2\1\0\6\17dark_variant\tmain\vstyles\0\fvariant\tauto\venable\0%extend_background_behind_borders\2\25dim_inactive_windows\1\nsetup\14rose-pine\frequire\0", "config", "rose-pine")
+time([[Config for rose-pine]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\nC\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\né\2\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\vstyles\1\0\3\17transparency\2\vitalic\2\tbold\2\venable\1\0\3\15migrations\2\22legacy_highlights\2\rterminal\2\1\0\6\vstyles\0\fvariant\tauto\venable\0%extend_background_behind_borders\2\25dim_inactive_windows\1\17dark_variant\tmain\nsetup\14rose-pine\frequire\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
 -- Config for: hologram.nvim
 time([[Config for hologram.nvim]], true)
 try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\17auto_display\2\nsetup\rhologram\frequire\0", "config", "hologram.nvim")
 time([[Config for hologram.nvim]], false)
--- Config for: nvim-notify
-time([[Config for nvim-notify]], true)
-try_loadstring("\27LJ\2\nÎ\1\0\0\4\0\a\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\0016\0\6\0006\1\0\0'\3\1\0B\1\2\2=\1\1\0K\0\1\0\bvim\nicons\1\0\5\nDEBUG\5\nTRACE\b‚úé\tWARN\5\tINFO\5\nERROR\5\1\0\6\18minimum_width\0032\nicons\0\22background_colour\vNormal\ftimeout\3∏\23\vrender\fcompact\vstages\22fade_in_slide_out\nsetup\vnotify\frequire\0", "config", "nvim-notify")
-time([[Config for nvim-notify]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

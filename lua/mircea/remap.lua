@@ -13,8 +13,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Move to next buffer window tab using :BufferNext
-vim.keymap.set("n", "<leader>l", "<cmd>BufferNext<CR>")
-vim.keymap.set("n", "<leader>h", "<cmd>BufferPrevious<CR>")
+vim.keymap.set("n", "<S-l>", "<cmd>BufferNext<CR>")
+vim.keymap.set("n", "<S-h>", "<cmd>BufferPrevious<CR>")
 
 -- Move the buffer position
 vim.keymap.set("n", "<leader>ml", "<cmd>BufferMoveNext<CR>")
@@ -98,8 +98,8 @@ vim.keymap.set('n', '<leader>t', '<cmd>exe v:count1 . "ToggleTerm"<CR>', {silent
 -- Movement remaps
 vim.keymap.set('n', 'J', '5jzz')
 vim.keymap.set('n', 'K', '5kzz')
-vim.keymap.set('n', 'H', '^')
-vim.keymap.set('n', 'L', '$')
+-- H and L now used for buffer navigation (Shift+H/L)
+-- Use ^ and $ directly for start/end of line
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
@@ -157,8 +157,8 @@ vim.keymap.set('n', '<leader>do', ':DiffviewOpen origin/master<CR>')
 vim.keymap.set('n', '<leader>dq', ':DiffviewClose<CR>')
 vim.keymap.set('n', '<leader>dh', ':DiffviewFileHistory<CR>')
 
--- Select all
-vim.keymap.set('n', '<leader>a', 'gg<S-v>G')
+-- Select all (using <leader>sa to avoid conflict with Avante/Harpoon)
+vim.keymap.set('n', '<leader>sa', 'gg<S-v>G')
 
 -- Dashboard keymaps (matching the dashboard shortcuts)
 vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')

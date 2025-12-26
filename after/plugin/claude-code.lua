@@ -4,10 +4,8 @@ if not status_ok then
 end
 
 claude_code.setup({
-  -- You can add configuration options here if needed
-  -- For example:
-  -- command = "claude-code",
-  -- keymaps = {
-  --   toggle = "<leader>cc",
-  -- }
+  window = {
+    split_ratio = 0.35,           -- 35% width for the sidebar
+    position = "rightbelow vertical", -- vertical split on the right
+  },
 })

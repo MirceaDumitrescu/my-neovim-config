@@ -84,28 +84,6 @@ return require('packer').startup(function(use)
 
   use('nvim-tree/nvim-web-devicons')
   
-  -- Notification plugin
-  use({
-    'rcarriga/nvim-notify',
-    config = function()
-      require("notify").setup({
-        stages = "fade_in_slide_out",
-        render = "compact",
-        timeout = 3000,
-        background_colour = "Normal",
-        minimum_width = 50,
-        icons = {
-          ERROR = "",
-          WARN = "",
-          INFO = "",
-          DEBUG = "",
-          TRACE = "✎",
-        },
-      })
-      vim.notify = require("notify")
-    end
-  })
-  
   -- Image viewing in Neovim
   use({
     'edluffy/hologram.nvim',
@@ -207,6 +185,7 @@ use "rafamadriz/friendly-snippets"
 
   -- Claude Code integration
   use 'greggh/claude-code.nvim'
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then
